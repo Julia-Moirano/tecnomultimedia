@@ -9,10 +9,6 @@ paisaje= loadImage("BateaMahuida.JPG");
 }
 
 void draw() {
-  /// MARCO DEL DIBUJO ///
-  noStroke();
-  line(800,0,800,400);
-  
   /// CIELO ///
   fill(125,160,210);
   rect(400,0,400,400);
