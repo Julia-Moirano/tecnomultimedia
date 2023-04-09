@@ -5,7 +5,7 @@ PImage paisaje;
 
 void setup() {
 size(800,400);
-paisaje= loadImage("BateaMahuida.JPG");
+paisaje= loadImage("bateamahuida.jpg");
 }
 
 void draw() {
