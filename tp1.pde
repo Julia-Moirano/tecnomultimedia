@@ -7,14 +7,14 @@ PImage c;
 PImage d;
 PImage e;
 PFont fuente;
-int segundos= 0;
+int segundos;
 int estado= 0;
 float fueraboton= 255;
 float apertura;
 float opacidad;
 float tamtexto;
 float velocidad;//(usado solamente con tamtexto)
-float pX,pY;
+float pX,pY,ancho;
 boolean arranque;
 
 void setup() {
@@ -32,6 +32,7 @@ void setup() {
  velocidad= 0.5;
  pX= 0;
  pY= 0;
+ ancho= 0;
 }
 
 void draw() {
@@ -60,7 +61,6 @@ void draw() {
   stroke(170,110,0,opacidad);
   strokeWeight(10);
   line(75,250,pX,250);
-  
   fill(170,110,0,opacidad);
   textSize(40);
   text("El Gran Cañón del Colorado",75,240);
@@ -97,18 +97,18 @@ void draw() {
   background(50,115,190);
   image(b,150,20,width/2+width/4,440);
   
-  pX=pX+5;
+  ancho=ancho+5;
   if(segundos<=6){
-    pX=0;
-  } else if(pX==300){
-    pX=pX-5;
+    ancho=0;
+  } else if(ancho==300){
+    ancho=ancho-5;
   }
   noStroke();
   fill(255,255,250);
-  rect(40,50,pX,115);
+  rect(40,50,ancho,115);
   noStroke();
   fill(255,255,250);
-  rect(40,175,pX-40,115);
+  rect(40,175,ancho-40,115);
   
   opacidad=opacidad+2;
   if(segundos<=7){
