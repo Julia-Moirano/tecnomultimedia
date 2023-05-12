@@ -9,6 +9,7 @@ PImage e;
 PFont fuente;
 int segundos= 0;
 int estado= 0;
+float fueraboton= 255;
 float apertura;
 float opacidad;
 float tamtexto;
@@ -24,7 +25,7 @@ void setup() {
  d= loadImage("grandcanyon4.jpg");
  e= loadImage("grandcanyon5.jpg");
  fuente= loadFont("garamondb.vlw");
- textFont(fuente,48);
+ textFont(fuente);
  apertura= 255;
  opacidad= 0;
  tamtexto= 30;
@@ -78,14 +79,14 @@ void draw() {
    rect(-10,-10,660,500);
    
     if(mouseX>505 && mouseX<620 && mouseY>420 && mouseY<460){
-     fill(170,110,0,apertura);
+     fill(170,110,0,fueraboton);
     } else {
-     fill(15,30,55,apertura);
+     fill(15,30,55,fueraboton);
     }
      noStroke();
      rect(505,420,115,40);
      
-     fill(255,255,250,apertura);
+     fill(255,255,250,fueraboton);
      textSize(25);
      text("Iniciar",527,447);
    //********-**-******//
@@ -197,7 +198,7 @@ void draw() {
   noStroke();
   fill(170,110,0,125);
   rect(10,10,620,460);
-    
+  
   if(segundos<=33){
     tamtexto=1;
   } else {
@@ -256,9 +257,19 @@ void draw() {
 }
 
 void mousePressed() {
+if(segundos==0){
 if(mouseX>505 && mouseX<620 && mouseY>420 && mouseY<460){
- segundos=0;
- arranque=true;
+  segundos=0;
+  arranque=true;
+  estado=0;
+  fueraboton=0;
   }
- estado=0;
+  }
+  if(segundos==42){
+if(mouseX>505 && mouseX<620 && mouseY>420 && mouseY<460){
+  segundos=0;
+  arranque=true;
+  estado=0;
+  }
+  }
 }
