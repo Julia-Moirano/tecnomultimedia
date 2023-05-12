@@ -6,12 +6,13 @@ PImage b;
 PImage c;
 PImage d;
 PImage e;
-int segundos;
-int estado;
+PFont fuente;
+int segundos= 0;
+int estado= 0;
 float apertura;
 float opacidad;
 float tamtexto;
-PFont fuente;
+float velocidad;//(usado solamente con tamtexto)
 float pX,pY;
 boolean arranque;
 
@@ -24,6 +25,12 @@ void setup() {
  e= loadImage("grandcanyon5.jpg");
  fuente= loadFont("garamondb.vlw");
  textFont(fuente,48);
+ apertura= 255;
+ opacidad= 0;
+ tamtexto= 30;
+ velocidad= 0.5;
+ pX= 0;
+ pY= 0;
 }
 
 void draw() {
@@ -186,26 +193,28 @@ void draw() {
   /// QUINTA PANTALLA
   if(estado==4){
   background(200,75,30);
-  image(e,20,20,320,440);
-
+  image(e,10,10,620,460);
   noStroke();
-  fill(255,255,250);
-  rect(360,125,260,190);
+  fill(170,110,0,125);
+  rect(10,10,620,460);
     
- tamtexto=tamtexto+0.5;
-  if(tamtexto==20){
-    tamtexto=tamtexto-0.5;
+  if(segundos<=33){
+    tamtexto=1;
+  } else {
+    tamtexto=tamtexto+velocidad/2/2;
   }
-  
-  fill(15,30,55);
+  if(segundos>=38){
+    tamtexto=30;
+  }
+  fill(255,255,250);
   textSize(tamtexto);
-  text("Al principio fue protegido",370,150);
-  text("como monumento nacional",370,175);
-  text("en 1893, y no fue hasta el",370,200);
-  text("26 de febrero de 1919 que",370,225);
-  text("se hizo un parque nacional,",370,250);
-  text("el cual sigue estando",370,275);
-  text("abierto hoy en día.",370,300);
+  text("Al principio fue protegido",-10+tamtexto,350-tamtexto);
+  text("como monumento nacional",-10+tamtexto,375-tamtexto);
+  text("en 1893, y no fue hasta el",-10+tamtexto,400-tamtexto);
+  text("26 de febrero de 1919 que",-10+tamtexto,425-tamtexto);
+  text("se hizo un parque nacional,",-10+tamtexto,450-tamtexto);
+  text("el cual sigue estando",-10+tamtexto,475-tamtexto);
+  text("abierto hoy en día.",-10+tamtexto,500-tamtexto);
 
    //Opción de reinicio//
    if(segundos==42){
