@@ -84,19 +84,18 @@ void draw() {
   ///
 }
 
- void keyPressed(){
-   if(red==210 && green==165 && blue==100){
-     red=colorrandom(100,165);
-     green=colorrandom(100,210);
-     blue=colorrandom(165,210);
+  void keyPressed(){
+   if(key==' '){
+     if(opacidad==0){
+   opacidad=125;
+   } else if(opacidad==125){
+   opacidad=255;
    } else {
-     red=colorrandom(165,210);
-     green=colorrandom(100,165);
-     blue=colorrandom(100,210);
+   opacidad=0;
    }
-   
+   }
    //Reinicio//
-   if(keyCode==LEFT){
+   if(key=='r'){
      contador=0;
      estado=0;
      red=210;
@@ -107,12 +106,14 @@ void draw() {
  }
  
  void mousePressed(){
-   if(opacidad==0){
-   opacidad=125;
-   } else if(opacidad==125){
-   opacidad=255;
+   if(red==210 && green==165 && blue==100){
+     red=colorrandom(100,165);
+     green=colorrandom(100,210);
+     blue=colorrandom(165,210);
    } else {
-   opacidad=0;
+     red=colorrandom(165,210);
+     green=colorrandom(100,165);
+     blue=colorrandom(100,210);
    }
  }
  
