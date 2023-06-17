@@ -1,6 +1,6 @@
 // Moirano Julia
 // tp2 comisión 1
-// link del video:
+// link del video: https://youtu.be/uxaboK92Sqo
 
 PImage obra;
 int contador;
@@ -54,21 +54,21 @@ void draw() {
    //Segundo iteración//
    push();
    translate(801,-400);
-   rotate(radians(90));
+   rotate(PI/2);
    patron(400, 0);
    pop();
    //
    //Tercera iteración//
    push();
    translate(1201,401);
-   rotate(radians(180));
+   rotate(PI);
    patron(400, 0);
    pop();
    //
    //Cuarta iteración//
    push();
    translate(400,801);
-   rotate(radians(270));
+   rotate(3*PI/2);
    patron(400, 0);
    pop();
    ///
