@@ -34,7 +34,7 @@ void draw() {
   float cambiavalor= map(centrodeldibujo,0,200,0,255);
   noStroke();
   fill(cambiavalor,green,blue);
-  rect(400,0,400,400);
+  rect(width/2,0,400,400);
   } else {
     fill(red,green,blue);
     noStroke();
