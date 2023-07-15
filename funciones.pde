@@ -16,6 +16,12 @@ void boton(int posx, int posy, float anchura, float altura, int radio){
   pop();
 }
 
+void filtrodefondo(int posx, int posy, int extension){
+  noStroke();
+  fill(0,190);
+  square(posx,posy,extension);
+}
+
 boolean pulsaboton(int posx, int posy, float anchura, float altura){
   if(mouseX>posx && mouseX<posx+anchura && mouseY>posy && mouseY<posy+altura){
     return true;
@@ -27,7 +33,9 @@ void mousePressed(){
     if(estado==0){
       if(pulsaboton(70,215,anchoboton,altoboton)){
         estado= 1;
-    }
+    } else if(pulsaboton(70,305,anchoboton,altoboton)){
+        estado= 26;
+  }
     } else if(estado==1){
       if(pulsaboton(425,390,anchoboton+50,altoboton)){
         estado= 2;
@@ -43,6 +51,8 @@ void mousePressed(){
     } else if(estado==4){
       if(pulsaboton(450,215,anchoboton,altoboton)){
         estado= 5;
+      } else if(pulsaboton(450,305,anchoboton,altoboton)){
+        estado= 16;
       }
     } else if(estado==5){
        if(pulsaboton(425,390,anchoboton+50,altoboton)){
@@ -86,10 +96,18 @@ void mousePressed(){
        }
     } else if(estado==15){
     if(pulsaboton(212,460,anchoboton+75,altoboton+25)){
-    estado= 0;
+        estado= 0;
     }
-  }
+    } else if(estado==16){
+    if(pulsaboton(425,390,anchoboton+50,altoboton)){
+        estado= 17;
+    }
+    } else if(estado==17){
+      if(pulsaboton(width/2,height/2,anchoboton,altoboton)){
+        estado= 18;
+    }
+} 
 }
 void keyPressed(){
-  estado= 15;
+  estado= 26;
 }
