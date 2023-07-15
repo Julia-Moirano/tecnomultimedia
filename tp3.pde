@@ -37,18 +37,15 @@ void setup(){
   }
   fuente= loadFont("papyrus.vlw");
   textFont(fuente);
-  for(int t=0; t<textobase.length; t++){ 
-    fill(125,125,190);
+  for(int t=0; t<textobase.length; t++){
     text(textobase[t],400,100);
 }
   for(int b=0; b<nombredeboton.length; b++){
-     fill(125,125,190);
     text(textobase[b],400,100);
 }
 }
 
 void draw(){
-  println(mouseY);
     float distsuperior= dist(0,0,0,200);
     float distinferior= dist(0,0,0,400);
     float bloquesuperior= map(distsuperior,0,600,0,300);
