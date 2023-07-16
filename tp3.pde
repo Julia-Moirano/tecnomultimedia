@@ -24,10 +24,6 @@ void setup(){
     imagenes [i]= loadImage("imagen"+i+".jpg");
   }
   textobase = loadStrings("narracion.txt");
-  for(int t= 0; t < lineasdetexto; t++){
-  }
-  for(int b= 0; b < nombredeboton.length; b++){
-  }
 }
 
 void draw(){
