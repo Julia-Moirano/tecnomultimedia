@@ -27,7 +27,6 @@ void setup(){
   for(int t= 0; t < lineasdetexto; t++){
   }
   for(int b= 0; b < nombredeboton.length; b++){
-    text(nombredeboton[b],600,600,anchoboton,altoboton);
   }
 }
 
