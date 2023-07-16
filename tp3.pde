@@ -25,10 +25,9 @@ void setup(){
   }
   textobase = loadStrings("narracion.txt");
   for(int t= 0; t < lineasdetexto; t++){
-    text(textobase[t],450,150);
   }
   for(int b= 0; b < nombredeboton.length; b++){
-    text(nombredeboton[b],anchoboton,altoboton);
+    text(nombredeboton[b],600,600,anchoboton,altoboton);
   }
 }
 
