@@ -9,7 +9,7 @@ float anchoboton, altoboton;
 PFont fuente;
 PImage [] imagenes= new PImage [totaldeimagenes];
 String [] textobase= new String [lineasdetexto];
-String [] nombredeboton= {"COMENZAR","Créditos","SIGUIENTE","VOLVER AL INICIO","ATRÁS","Sigues esperando","Bostezas","Lanzarle comida","Correr","Hacerme un sanguche","Salir afuera"};
+String [] nombredeboton= {"COMENZAR","Créditos","SIGUIENTE","VOLVER AL INICIO","ATRÁS","Sigues esperando","Bostezas","Lanzarle comida","Correr","Hacerme un sánguche","Salir afuera"};
 
 void setup(){
   size(600,600);
