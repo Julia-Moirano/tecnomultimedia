@@ -1,6 +1,6 @@
 // Moirano Julia
 // tp3 comisión 1
-// link del video: 
+// link del video: https://youtu.be/lBGK12ucJj0
 
 int totaldeimagenes= 26;
 int lineasdetexto= 25;
