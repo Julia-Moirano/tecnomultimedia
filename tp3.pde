@@ -21,9 +21,9 @@ void setup(){
   fuente= loadFont("papyrus.vlw");
   textFont(fuente);
   for(int i= 0; i < totaldeimagenes; i++){
-    imagenes [i]= loadImage("imagen"+i+".jpg");
+    imagenes[i]= loadImage("imagen"+i+".jpg");
   }
-  textobase = loadStrings("narracion.txt");
+  textobase= loadStrings("narracion.txt");
 }
 
 void draw(){
