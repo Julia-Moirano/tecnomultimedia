@@ -49,8 +49,6 @@ function draw() {
   stroke(150,75,0);
   rect(width/2,height/2,600,450);
   pop();
-  luchador(luchadorx,luchadory,ancho,altura);
-  rival(rivalx,rivaly,ancho,altura);
     if (keyIsDown(87)||keyIsDown(119)) {
       if (luchadory>450/3) {
       luchadory-=2;
@@ -82,17 +80,49 @@ function draw() {
     }
     if (keyIsDown(RIGHT_ARROW) && rivalx<width-600/5) {
       rivalx+=4;
-   }
-   if (golpe(rivalx,rivaly,luchadorx,luchadory) && keyIsDown(76)){
-     puntaje2++;
-   }
-   if (golpe(luchadorx,luchadory,rivalx,rivaly) && keyIsDown(81)){
+    }
+   
+  if (keyIsDown(81)||keyIsDown(113)){
+    push();
+    translate(luchadorx,luchadory);
+    rotate(PI/4);
+    brazosdeluchador(0,0,50,50);
+    pop();
+    if (colision(luchadorx,luchadory,rivalx,rivaly,ancho,altura)){
+      fill(200,200,15);
      puntaje1++;
    }
-   image(imagen,0,0);
+  } else if(keyIsDown(90)||keyIsDown(122)){
     push();
-    fill(127,0,0);
-    textSize(30);
+    translate(luchadorx,luchadory);
+    rotate(7*PI/4);
+    brazosdeluchador(0,0,50,50);
+    pop();
+  } else {
+    brazosdeluchador(luchadorx,luchadory);
+  }
+  cabezadeluchador(luchadorx,luchadory,50,50);
+  
+  ///////////////////////////////////////////////
+  if(keyIsDown(76)||keyIsDown(108)){
+    push();
+    translate(rivalx,rivaly);
+    rotate(7*PI/4);
+    brazosderival(25,0,50,50);
+    pop();
+  } else if(keyIsDown(75)||keyIsDown(107)){
+    push();
+    translate(rivalx,rivaly);
+    rotate(PI/4);
+    brazosderival(25,0,50,50);
+    pop();
+  } else {
+  brazosderival(rivalx+25,rivaly);
+  }
+  cabezaderival(rivalx,rivaly,50,50);
+   image(imagen,0,0);
+   fill(127,0,0);
+   textSize(30);
    text(puntaje1,width/5,height/15);
    text(puntaje2,width/5+480,height/15);
    textSize(40);
@@ -100,66 +130,50 @@ function draw() {
    pop();
 }
 
-function luchador(posx,posy) {
-if (keyIsDown(81)||keyIsDown(113)){
-    push();
-    translate(posx,posy);
-    rotate(PI/4);
-    brazosdeluchador(0,0,50,50);
-    pop();
-  } else if(keyIsDown(90)||keyIsDown(122)){
-    push();
-    translate(posx,posy);
-    rotate(7*PI/4);
-    brazosdeluchador(0,0,50,50);
-    pop();
-  } else {
-    brazosdeluchador(posx,posy);
-  }
-    cabezadeluchador(posx,posy,50,50); // cabeza
-}
-
 function brazosdeluchador(posx,posy){
+  push();
+  fill(255);
+  noStroke();
   rect(posx-12.5,posy,50-25,50+100);//brazos
   rect(posx+25,posy+62.5,50,50-25);//puños
   rect(posx+25,posy-62.5,50,50-25);//puños
+  pop();
 }
 
 function cabezadeluchador(posx,posy,anchura,altura){
+  push();
+  fill(255);
+  stroke(125);
   ellipse(posx,posy,anchura,altura);
-}
-function rival(posx,posy){
-   if(keyIsDown(76)||keyIsDown(108)){
-    push();
-    translate(posx,posy);
-    rotate(7*PI/4);
-    brazosderival(25,0,50,50);
-    pop();
-  } else if(keyIsDown(75)||keyIsDown(107)){
-    push();
-    translate(posx,posy);
-    rotate(PI/4);
-    brazosderival(25,0,50,50);
-    pop();
-  } else {
-  brazosderival(posx+25,posy,50,50);
-  }
-  ellipse(posx,posy,50,50);
+  pop();
 }
 
 function brazosderival(posx,posy){
+  push();
+  fill(0);
+  stroke(0);
   rect(posx-12.5,posy,50-25,50+100);//brazos
   rect(posx-50,posy+62.5,50,50-25);//puños
   rect(posx-50,posy-62.5,50,50-25);//puños
+  pop();
 }
-
+function cabezaderival(posx,posy,anchura,altura){
+  push();
+  fill(0);
+  stroke(125);
+  ellipse(posx,posy,anchura,altura);
+  pop();
+}
 function temporarizador(texto,ancho,altura){
   text(texto,ancho,altura);
 }
-function golpe(posx1,posy1,posx2,posy2){
-  if(posx1===posx2 && posy1===posy2){
+function colision(posx1,posy1,posx2,posy2,ancho2,altura2){
+  let distancia= dist(posx1,posy1,posx2,posy2);
+  if(distancia<ancho2 && distancia<altura2){
     return true;
   } else {
     return false;
+  }
+}
   }
 }
