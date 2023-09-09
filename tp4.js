@@ -27,7 +27,7 @@ function setup() {
 }
 
 function preload(){
-  imagen = loadImage("data/wait_.png");
+  imagen = loadImage("data/imagen0.png");
 }
 
 function draw() {
