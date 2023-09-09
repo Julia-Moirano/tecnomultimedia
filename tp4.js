@@ -11,18 +11,23 @@ let puntaje2= 0;
 let segundos;
 let minutos;
 let arranque;
+let imagen;
 
 function setup() {
  createCanvas(800,600);
-  luchadorx= width/8;
+  luchadorx= width/5;
   luchadory= height/2;
-  rivalx= width/8+600;
+  rivalx= width/5+480;
   rivaly= height/2;
   ancho= 50;
   altura= 50;
   //Cómo la pelea dura un minuto y medio, empezará con las siguentes variables númericas:
   segundos=30;
   minutos=1;
+}
+
+function preload(){
+  imagen = loadImage("data/wait_.png");
 }
 
 function draw() {
@@ -42,44 +47,56 @@ function draw() {
   noFill();
   strokeWeight(10);
   stroke(150,75,0);
-  rect(width/2,height/2,700,525);
+  rect(width/2,height/2,600,450);
   pop();
   luchador(luchadorx,luchadory,ancho,altura);
   rival(rivalx,rivaly,ancho,altura);
     if (keyIsDown(87)||keyIsDown(119)) {
+      if (luchadory>450/3) {
       luchadory-=2;
+      }
     } 
     if (keyIsDown(83)||keyIsDown(115)) {
+      if(luchadory<height-450/3){
       luchadory+=2;
     }
+    }
     if (keyIsDown(65)||keyIsDown(97)) {
+      if(luchadorx>600/5){
       luchadorx-=4;
+      }
     }
     if (keyIsDown(68)||keyIsDown(100)) {
+      if(luchadorx<width-600/4 && luchadorx<rivalx){
       luchadorx+=4;
+      }
     } 
-    if (keyIsDown(UP_ARROW)) {
+    if (keyIsDown(UP_ARROW) && rivaly>450/3) {
       rivaly-=2;
     }
-    if (keyIsDown(DOWN_ARROW)) {
+    if (keyIsDown(DOWN_ARROW) && rivaly<height-450/3) {
       rivaly+=2;
     }
-    if (keyIsDown(LEFT_ARROW)) {
+    if (keyIsDown(LEFT_ARROW) && rivalx>600/4 && rivalx>luchadorx) {
       rivalx-=4;
     }
-    if (keyIsDown(RIGHT_ARROW)) {
+    if (keyIsDown(RIGHT_ARROW) && rivalx<width-600/5) {
       rivalx+=4;
-    }
-   if(brazosderival>=cabezadeluchador){
-     golperival++;
    }
+   if (golpe(rivalx,rivaly,luchadorx,luchadory) && keyIsDown(76)){
+     puntaje2++;
+   }
+   if (golpe(luchadorx,luchadory,rivalx,rivaly) && keyIsDown(81)){
+     puntaje1++;
+   }
+   image(imagen,0,0);
     push();
     fill(127,0,0);
-    textSize(20);
-   text(puntaje1,width/8,height/8);
-   text(puntaje2,width/8+600,height/8);
+    textSize(30);
+   text(puntaje1,width/5,height/15);
+   text(puntaje2,width/5+480,height/15);
    textSize(40);
-   temporarizador("0"+minutos+":"+segundos,width/2,height/8);
+   temporarizador("0"+minutos+":"+segundos,width/2,height/12);
    pop();
 }
 
@@ -96,10 +113,10 @@ if (keyIsDown(81)||keyIsDown(113)){
     rotate(7*PI/4);
     brazosdeluchador(0,0,50,50);
     pop();
-} else {
+  } else {
     brazosdeluchador(posx,posy);
   }
-    cabezadeluchador(posx,posy,ancho,altura); // cabeza
+    cabezadeluchador(posx,posy,50,50); // cabeza
 }
 
 function brazosdeluchador(posx,posy){
@@ -109,15 +126,7 @@ function brazosdeluchador(posx,posy){
 }
 
 function cabezadeluchador(posx,posy,anchura,altura){
-  push();
-  if(keyIsDown(76)||keyIsDown(108)||keyIsDown(75)||keyIsDown(107)){
-   fill(0,255,100);
-    puntaje2++;
-   } else {
-     fill(255);
-   }
   ellipse(posx,posy,anchura,altura);
-  pop();
 }
 function rival(posx,posy){
    if(keyIsDown(76)||keyIsDown(108)){
@@ -147,13 +156,10 @@ function brazosderival(posx,posy){
 function temporarizador(texto,ancho,altura){
   text(texto,ancho,altura);
 }
-function golpe(posx,posy,anchura,altura){
-  if(mouseX>posx && mouseX<posx+anchura && mouseY>posy && mouseY<posy+altura){
+function golpe(posx1,posy1,posx2,posy2){
+  if(posx1===posx2 && posy1===posy2){
     return true;
   } else {
     return false;
   }
 }
-//VAMOS A VER
-//ideas para el juego boxing:---->
-   //creación de fondo
