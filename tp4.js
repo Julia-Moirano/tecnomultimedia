@@ -92,7 +92,6 @@ function draw() {
     brazosdejugador1(0,0,255);
     pop();
     if (colision(luchadorx,luchadory,rivalx,rivaly,ancho,altura)){
-      fill(200,200,15);
      puntaje1++;
    }
   } else if(keyIsDown(90)||keyIsDown(122)){
