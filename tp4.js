@@ -92,7 +92,9 @@ function draw() {
     brazosdejugador1(0,0,255);
     pop();
     if (colision(luchadorx,luchadory,rivalx,rivaly,ancho,altura)){
+      if(frameCount%5===0){
      puntaje1++;
+      }
    }
   } else if(keyIsDown(90)||keyIsDown(122)){
     push();
