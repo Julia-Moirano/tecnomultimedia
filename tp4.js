@@ -1,6 +1,6 @@
 // Moirano Julia
 // tp4 comisión 1
-//
+// Link del video:
 
 let luchadorx, luchadory;
 let rivalx, rivaly;
@@ -50,8 +50,6 @@ function draw() {
   stroke(150,75,0);
   rect(width/2,height/2,600,450);
   pop();
-  //luchador(luchadorx,luchadory,ancho,altura);
-  //rival(rivalx,rivaly,ancho,altura);
     if (keyIsDown(87)||keyIsDown(119)) {
       if (luchadory>450/3) {
       luchadory-=2;
@@ -84,28 +82,28 @@ function draw() {
     if (keyIsDown(RIGHT_ARROW) && rivalx<width-600/5) {
       rivalx+=4;
     }
-   
-  if (keyIsDown(81)||keyIsDown(113)){
+  if (keyIsDown(81)||keyIsDown(113)){ /// "Q"||"q"
     push();
     translate(luchadorx,luchadory);
     rotate(PI/4);
     brazosdejugador1(0,0,255);
     pop();
-    if (colision(luchadorx,luchadory,rivalx,rivaly,ancho,altura)){
-      if(frameCount%5===0){
+    if (contacto(luchadorx+95,luchadory+26,luchadorx+114,luchadory+7.5,rivalx,rivaly,ancho,altura)){
      puntaje1++;
-      }
    }
-  } else if(keyIsDown(90)||keyIsDown(122)){
+  } else if(keyIsDown(90)||keyIsDown(122)){ /// "Z"||"z"
     push();
     translate(luchadorx,luchadory);
     rotate(7*PI/4);
     brazosdejugador1(0,0,255);
     pop();
+    if (contacto(luchadorx+95,luchadory+24,luchadorx+114,luchadory+42.5,rivalx,rivaly,ancho,altura)){
+     puntaje1++;
+   }
   } else {
     brazosdejugador1(luchadorx,luchadory,blanco);
   }
-  cabeza(luchadorx,luchadory,50,50,blanco);
+  cabeza(luchadorx,luchadory,ancho,altura,blanco);
   ///////////////////////////////////////////////
   if(keyIsDown(76)||keyIsDown(108)){
     push();
@@ -113,18 +111,24 @@ function draw() {
     rotate(7*PI/4);
     brazosdejugador2(0,0,0);
     pop();
+   if (contacto(rivalx-45,rivaly+26,rivalx-64,rivaly+7.5,luchadorx,luchadory,ancho,altura)){
+     puntaje2++;
+   }
   } else if(keyIsDown(75)||keyIsDown(107)){
     push();
     translate(rivalx,rivaly);
     rotate(PI/4);
     brazosdejugador2(0,0,0);
     pop();
+    if (contacto(rivalx-45,rivaly+24,rivalx-64,rivaly+42.5,luchadorx,luchadory,ancho,altura)){
+     puntaje2++;
+   }
   } else {
   brazosdejugador2(rivalx,rivaly,negro);
   }
-  cabeza(rivalx,rivaly,50,50,negro);
+  cabeza(rivalx,rivaly,ancho,altura,negro);
    image(imagen,0,0);
-  push();
+   push();
    fill(127,0,0);
    textSize(30);
    text(puntaje1,width/5,height/15);
@@ -140,75 +144,5 @@ function draw() {
   text("you won yipiii", 200,200);
   boton(width/4,height/4+height/2,100,50,0);
 }
-  }
-}
-function mousePressed(){
- if(estado===0){
-    arranque=true;
-    estado=1;
-    tiempototal=91;
-  } else if(estado===1){
-   if(pulsaboton(width/4,height/4+height/2,100,50,0)){
-    estado=0;
-  }
-  }
-}
-
-function brazosdejugador1(posx,posy,valor){
-  push();
-  fill(valor);
-  stroke(valor);
-  rect(posx-12.5,posy,50-25,50+100);//brazos
-  rect(posx+25,posy+62.5,50,50-25);//puños
-  rect(posx+25,posy-62.5,50,50-25);//puños
-  pop();
-}
-
-function brazosdejugador2(posx,posy,valor){
-  push();
-  translate(posx,posy);
-  rotate(2*PI/2);
-  fill(valor);
-  stroke(valor);
-  noStroke();
-  brazosdejugador1(0,0,valor);
-  pop();
-}
-
-function cabeza(posx,posy,anchura,altura,valor){
-  push();
-  fill(valor);
-  stroke(125);
-  ellipse(posx,posy,anchura,altura);
-  pop();
-}
-
-function boton(posx,posy,anchura,altura,radio){
-  push();
-  rectMode(CORNER);
-  if(pulsaboton(posx,posy,anchura,altura)){
-    fill(60,60,95);
-  } else {
-    fill(60,60,95,125);
-  }
-  stroke(15,15,15);
-  rect(posx,posy,anchura,altura,radio);
-  pop();
-}
-
-function colision(posx1,posy1,posx2,posy2,ancho2,altura2){
-  let distancia= dist(posx1,posy1,posx2,posy2);
-  if(distancia<ancho2 && distancia<altura2){
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function pulsaboton(posx,posy,anchura,altura){
-  if(mouseX>posx && mouseX<posx+anchura && mouseY>posy && mouseY<posy+altura){
-    return true;
-  } else {
-    return false;
   }
 }
