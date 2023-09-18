@@ -1,28 +1,14 @@
-function mousePressed(){
- if(estado===0){
-    arranque=true;
-    estado=1;
-    puntaje1=0;
-    puntaje2=0;
-    tiempototal=91;
-  } else if(estado===1){
-   if(pulsaboton(width/4,height/4+height/2,100,50,0)){
-    estado=0;
-  }
-  }
-}
-
-function brazosdejugador1(posx,posy,valor){
+function brazosdejugador1(posx,posy,valor) {
   push();
   fill(valor);
   stroke(valor);
-  rect(posx-12.5,posy,50-25,50+100);//brazos
-  rect(posx+25,posy-62.5,50,50-25);//puños
-  rect(posx+25,posy+62.5,50,50-25);//puños
+  rect(posx-12.5,posy,50-25,50+100);
+  rect(posx+25,posy-62.5,50,50-25);
+  rect(posx+25,posy+62.5,50,50-25);
   pop();
 }
 
-function brazosdejugador2(posx,posy,valor){
+function brazosdejugador2(posx,posy,valor) {
   push();
   translate(posx,posy);
   rotate(2*PI/2);
@@ -33,7 +19,7 @@ function brazosdejugador2(posx,posy,valor){
   pop();
 }
 
-function cabeza(posx,posy,anchura,altura,valor){
+function cabeza(posx,posy,anchura,altura,valor) {
   push();
   fill(valor);
   stroke(125);
@@ -41,35 +27,63 @@ function cabeza(posx,posy,anchura,altura,valor){
   pop();
 }
 
-function boton(posx,posy,anchura,altura,radio){
+function boton(posx,posy,anchura,altura) {
   push();
   rectMode(CORNER);
-  if(pulsaboton(posx,posy,anchura,altura)){
-    fill(60,60,95);
-  } else {
-    fill(60,60,95,125);
-  }
-  stroke(15,15,15);
-  rect(posx,posy,anchura,altura,radio);
+  fill(250,0,40);
+  stroke(0,125);
+  rect(posx,posy,anchura,altura);
   pop();
 }
 
-function contacto(posx1,posy1,posx2,posy2,cabezax,cabezay,ancho,altura){
-  if(posx1>cabezax && posx1<cabezax+ancho && posy1>cabezay && posy1<cabezay+altura){
-    if(posx2>cabezax && posx2<cabezax+ancho && posy2>cabezay && posy2<cabezay+altura){
-    if(frameCount%5===0){
-    return true;
-    }
-    }
-  } else {
-    return false;
-  }
+function campodecombate(posx,posy,anchura,altura) {
+  push();
+  noFill();
+  strokeWeight(10);
+  stroke(150,75,0);
+  rect(posx,posy,anchura,altura);
+  pop();
 }
 
-function pulsaboton(posx,posy,anchura,altura){
-  if(mouseX>posx && mouseX<posx+anchura && mouseY>posy && mouseY<posy+altura){
+function sistema(puntos1,puntos2,tiempo,segundos) {
+  push();
+  fill(127,0,0);
+  textSize(30);
+  text(puntos1,width/5,height/15);
+  text(puntos2,width/5+480,height/15);
+  textSize(40);
+  text(tiempo[segundos],width/2,height/12);
+  pop();
+}
+
+function variablesoriginales() {
+  arranque= true;
+  jugador1x= width/5;
+  jugador1y= height/2;
+  jugador2x= width/5+480;
+  jugador2y= height/2;
+  estado= 1;
+  puntaje1= 0;
+  puntaje2= 0;
+  tiempototal= 91;
+}
+
+function golpe(posx1,posy1,posx2,posy2,cabezax,cabezay,anchura,altura) {
+  if (posx1>cabezax && posx1<cabezax+anchura && posy1>cabezay && posy1<cabezay+altura) {
+    if (posx2>cabezax && posx2<cabezax+anchura && posy2>cabezay && posy2<cabezay+altura) {
+      if (frameCount%5===0) {
+        return true;
+      }
+    }
+  } else {
+      return false;
+    }
+}
+
+function pulsaboton(posx,posy,anchura,altura) {
+  if (mouseX>posx && mouseX<posx+anchura && mouseY>posy && mouseY<posy+altura) {
     return true;
   } else {
-    return false;
-  }
+      return false;
+    }
 }
