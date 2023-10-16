@@ -8,9 +8,9 @@ class boton{
     rectMode(CENTER);
   }
   
-  dibujarBoton(presente,siguiente){
-    this.presente=presente;
-    this.siguiente=siguiente;
+  dibujarBoton(bpresente,bsiguiente){
+    this.bpresente=bpresente;
+    this.bsiguiente=bsiguiente;
     fill(150,150,150);
     rect(this.bx,this.by,this.bancho,this.balto);
   }
