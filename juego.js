@@ -69,9 +69,9 @@ class juego{
   }
 
   clickear(){
-    if (this.boton1.presionarBoton(400,400,this.anchuraBoton,this.alturaBoton) && this.estado===this.boton1.bpresente) {
+    if (this.boton1.presionarBoton(400,400,this.anchuraBoton,this.alturaBoton)) {
       this.estado = this.boton1.bsiguiente;
-    } else if(this.boton4.presionarBoton(450,550,this.anchuraBoton/2,this.alturaBoton) && this.estado===this.boton4.bpresente) {
+    } else if(this.boton4.presionarBoton(450,550,this.anchuraBoton/2,this.alturaBoton)) {
         this.estado = this.boton4.bsiguiente;
       }
   }
