@@ -3,7 +3,7 @@
 // Link del video:
 
 let principal;
-let cantidadtotal= 15;
+let cantidadtotal= 21;
 let imagenes= new Array(cantidadtotal);
 
 function setup() {
