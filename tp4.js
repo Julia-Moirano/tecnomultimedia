@@ -15,6 +15,8 @@ let temporizador= new Array(tiempototal);
 let cantidadtotal= 4;
 let imagen= new Array(cantidadtotal);
 let arranque;
+let golpeado1;
+let golpeado2;
 
 function preload() {
   temporizador= loadStrings("data/temporizador.txt");
@@ -31,6 +33,8 @@ function setup() {
   jugador2y= height/2;
   ancho= 50;
   alto= 50;
+  golpeado1= false;
+  golpeado2= false;
 }
 
 function draw() {
@@ -93,8 +97,9 @@ function draw() {
           rotate(PI/4);
           brazosdejugador1(0,0,255);
           pop();
-          if (golpe(jugador1x+95,jugador1y+26,jugador1x+114,jugador1y+7.5,jugador2x,jugador2y,ancho,alto)) {
+          if (golpe(jugador1x+95,jugador1y+26,jugador1x+114,jugador1y+7.5,jugador2x,jugador2y,ancho,alto) && golpeado1===false) {
             puntaje1++;
+            golpeado1= true;
           }
         } else if (keyIsDown(90) || keyIsDown(122)) { /// "Z"||"z"
             push();
@@ -102,11 +107,13 @@ function draw() {
             rotate(7*PI/4);
             brazosdejugador1(0,0,255);
             pop();
-            if (golpe(jugador1x+95,jugador1y+24,jugador1x+114,jugador1y+42.5,jugador2x,jugador2y,ancho,alto)) {
+            if (golpe(jugador1x+95,jugador1y+24,jugador1x+114,jugador1y+42.5,jugador2x,jugador2y,ancho,alto) && golpeado1===false) {
               puntaje1++;
+              golpeado1= true;
             }
           } else {
               brazosdejugador1(jugador1x,jugador1y,blanco);
+              golpeado1= false;
             }
             cabeza(jugador1x,jugador1y,ancho,alto,blanco);
         if (keyIsDown(76) || keyIsDown(108)) { /// "L"||"l"
@@ -115,8 +122,9 @@ function draw() {
           rotate(7*PI/4);
           brazosdejugador2(0,0,0);
           pop();
-          if (golpe(jugador2x-45,jugador2y+26,jugador2x-64,jugador2y+7.5,jugador1x,jugador1y,ancho,alto)) {
+          if (golpe(jugador2x-45,jugador2y+26,jugador2x-64,jugador2y+7.5,jugador1x,jugador1y,ancho,alto) && golpeado2===false) {
             puntaje2++;
+            golpeado2= true;
           }
         } else if(keyIsDown(75) || keyIsDown(107)){ /// "K"||"k"
             push();
@@ -124,18 +132,20 @@ function draw() {
             rotate(PI/4);
             brazosdejugador2(0,0,0);
             pop();
-            if (golpe(jugador2x-45,jugador2y+24,jugador2x-64,jugador2y+42.5,jugador1x,jugador1y,ancho,alto)) {
+            if (golpe(jugador2x-45,jugador2y+24,jugador2x-64,jugador2y+42.5,jugador1x,jugador1y,ancho,alto) && golpeado2===false) {
               puntaje2++;
+              golpeado2= true;
             }
           } else {
               brazosdejugador2(jugador2x,jugador2y,negro);
+              golpeado2= false;
             }
             cabeza(jugador2x,jugador2y,ancho,alto,negro);
             image(imagen[1],0,0);
             sistema(puntaje1,puntaje2,temporizador,tiempototal);
       }
       if (tiempototal<1 || puntaje1===100 || puntaje2===100) {
-        arranque=false;
+        arranque= false;
         background(175,255,127);
         campodecombate(width/2,height/2,600,450);
         image(imagen[1],0,0);
