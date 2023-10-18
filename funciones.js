@@ -71,9 +71,7 @@ function variablesoriginales() {
 function golpe(posx1,posy1,posx2,posy2,cabezax,cabezay,anchura,altura) {
   if (posx1>cabezax && posx1<cabezax+anchura && posy1>cabezay && posy1<cabezay+altura) {
     if (posx2>cabezax && posx2<cabezax+anchura && posy2>cabezay && posy2<cabezay+altura) {
-      if (frameCount%5===0) {
         return true;
-      }
     }
   } else {
       return false;
