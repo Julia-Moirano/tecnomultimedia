@@ -6,11 +6,11 @@ class juego{
     for (let i= 0; i < this.cantidadtotal; i++) {
       this.imagenes[i]= loadImage("data/imagen"+i+".png");
     } 
-    this.boton1= new boton(400,400,300,50);
-    this.boton2= new boton(600,550,300/2,50);
-    this.boton3= new boton(650,500,200,50);
-    this.boton4= new boton(675,300,300/2,50);
-    this.boton5= new boton(650,550,250,50);
+    this.boton1= new pulsador(400,400,300,50);
+    this.boton2= new pulsador(600,550,300/2,50);
+    this.boton3= new pulsador(650,500,200,50);
+    this.boton4= new pulsador(675,300,300/2,50);
+    this.boton5= new pulsador(650,550,250,50);
     this.johnny1= new personaje(50,165,100,150);
     this.johnny2= new personaje(750,165,100,150);
     this.pied= [];
@@ -25,16 +25,16 @@ class juego{
     if(this.estado===0) {
       image(this.imagenes[1],0,0);
       image(this.imagenes[0],0,-100);
-      this.boton1.dibujarBoton("COMENZAR",0,1);
+      this.boton1.dibujarPulsador("COMENZAR",0,1);
     } else if(this.estado===1){
         image(this.imagenes[2],0,0);
-        this.boton2.dibujarBoton("SIGUIENTE",1,2);
+        this.boton2.dibujarPulsador("SIGUIENTE",1,2);
       } else if(this.estado===2){
           image(this.imagenes[5],0,0);
           image(this.imagenes[4],0,0);
           image(this.imagenes[6],0,0);
           image(this.imagenes[3],0,0);
-          this.boton3.dibujarBoton("¡VAMOS!",2,3);
+          this.boton3.dibujarPulsador("¡VAMOS!",2,3);
         } else if(this.estado===3){
             image(this.imagenes[5],0,0);
             image(this.imagenes[4],0,0);
@@ -101,10 +101,10 @@ class juego{
                           this.muerto();
                         } else if(this.estado===11){
                             image(this.imagenes[18],0,0);
-                            this.boton4.dibujarBoton("TERMINAR",11,0);
+                            this.boton4.dibujarPulsador("TERMINAR",11,0);
                           } else if(this.estado===12){
                               image(this.imagenes[19],0,0);
-                              this.boton5.dibujarBoton("VOLVER A JUGAR",12,3);
+                              this.boton5.dibujarPulsador("VOLVER A JUGAR",12,3);
                           }
   }
  
@@ -157,17 +157,17 @@ class juego{
   }
   
   clickear(){
-    if(this.estado===this.boton1.bpresente && this.boton1.presionarBoton(400,400,300,50)) {
-      this.estado = this.boton1.bsiguiente;
-    } else if(this.estado===this.boton2.bpresente && this.boton2.presionarBoton(600,550,300/2,50)) {
-        this.estado = this.boton2.bsiguiente;
-      } else if(this.estado===this.boton3.bpresente && this.boton3.presionarBoton(650,500,200,50)){
-          this.estado = this.boton3.bsiguiente;
+    if(this.estado===this.boton1.pulpresente && this.boton1.apretarPulsador(400,400,300,50)) {
+      this.estado = this.boton1.pulsiguiente;
+    } else if(this.estado===this.boton2.pulpresente && this.boton2.apretarPulsador(600,550,300/2,50)) {
+        this.estado = this.boton2.pulsiguiente;
+      } else if(this.estado===this.boton3.pulpresente && this.boton3.apretarPulsador(650,500,200,50)){
+          this.estado = this.boton3.pulsiguiente;
           this.reiniciarVariables();
-        } else if(this.estado===this.boton4.bpresente && this.boton4.presionarBoton(675,300,200/2,50)){
-            this.estado = this.boton4.bsiguiente;
-          } else if(this.estado===this.boton5.bpresente && this.boton5.presionarBoton(650,550,250,50)){
-              this.estado = this.boton5.bsiguiente;
+        } else if(this.estado===this.boton4.pulpresente && this.boton4.apretarPulsador(675,300,200/2,50)){
+            this.estado = this.boton4.pulsiguiente;
+          } else if(this.estado===this.boton5.pulpresente && this.boton5.apretarPulsador(650,550,250,50)){
+              this.estado = this.boton5.pulsiguiente;
               this.reiniciarVariables();
             }
   }
@@ -179,7 +179,7 @@ class juego{
       } else if(keyCode === RIGHT_ARROW){
           this.johnny1.moverDerecha1();
         }
-        if(this.johnny1.perx > 850){
+        if(this.johnny1.perx>850){
           this.estado = this.johnny1.persiguiente;
           this.johnny2= new personaje(750,165,100,150);
         }
@@ -189,7 +189,7 @@ class juego{
         } else if(keyCode === RIGHT_ARROW){
             this.johnny2.moverDerecha2();
           }
-          if(this.johnny2.perx < -50){
+          if(this.johnny2.perx<-50){
             this.estado = this.johnny2.persiguiente;
             this.johnny1 = new personaje(50,165,100,150);
           }
