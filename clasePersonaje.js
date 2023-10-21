@@ -24,6 +24,7 @@ class personaje{
     this.perx-=100;
     this.pery-=50;
   }
+  
   moverDerecha1(){
     this.perx+=100;
     this.pery+=50;
@@ -33,6 +34,7 @@ class personaje{
     this.perx-=100;
     this.pery+=50;
   }
+  
   moverDerecha2(){
     this.perx+=100;
     this.pery-=50;
