@@ -1,6 +1,6 @@
 // Moirano Julia
 // tp5 comisión 1
-// Link del video:
+// Link del video: https://youtu.be/AzGIM8w1k04
 
 let principal;
 
