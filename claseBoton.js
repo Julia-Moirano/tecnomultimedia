@@ -1,27 +1,27 @@
-class boton{
-  constructor(bx,by,bancho,balto){
-    this.bx= bx;
-    this.by= by;
-    this.bancho= bancho;
-    this.balto= balto;
+class pulsador{
+  constructor(pulx,puly,pulancho,pulalto){
+    this.pulx= pulx;
+    this.puly= puly;
+    this.pulancho= pulancho;
+    this.pulalto= pulalto;
     textAlign(CENTER,CENTER);
-    textSize(this.balto/2);
+    textSize(this.pulalto/2);
   }
   
-  dibujarBoton(texto,bpresente,bsiguiente){
+  dibujarPulsador(texto,pulpresente,pulsiguiente){
     push();
     rectMode(CENTER);
-    this.bpresente= bpresente;
-    this.bsiguiente= bsiguiente;
+    this.pulpresente= pulpresente;
+    this.pulsiguiente= pulsiguiente;
     this.texto= texto;
     fill(125,125,175);
-    rect(this.bx,this.by,this.bancho,this.balto,15);
+    rect(this.pulx,this.puly,this.pulancho,this.pulalto,15);
     fill(90,60,90);
-    text(texto,this.bx,this.by);
+    text(texto,this.pulx,this.puly);
     pop();
   }
   
-  presionarBoton(bx,by,bancho,balto){
-    return mouseX>this.bx-this.bancho/2 && mouseX<this.bx+this.bancho/2 && mouseY>this.by-this.balto/2 && mouseY<this.by+this.balto/2;
+  apretarPulsador(pulx,puly,pulancho,pulalto){
+    return mouseX>this.pulx-this.pulancho/2 && mouseX<this.pulx+this.pulancho/2 && mouseY>this.puly-this.pulalto/2 && mouseY<this.puly+this.pulalto/2;
   }
 }
