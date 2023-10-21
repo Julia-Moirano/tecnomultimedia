@@ -6,7 +6,7 @@ class piedras{
   }
   
   dibujarPiedras(imgPiedras,velocidad){
-    push()
+    push();
     imageMode(CENTER);
     this.imgPiedras= imgPiedras;
     image(this.imgPiedras,this.piedx,this.piedy);
@@ -15,12 +15,11 @@ class piedras{
   }
   
   caer(velocidad){
-    this.piedy += velocidad;
+    this.piedy+=velocidad;
     if(this.piedy>height){
       this.piedy= -50;
       this.golpeado= true;
     }
   }
-  
   
 }
