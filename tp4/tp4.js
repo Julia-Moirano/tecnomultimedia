@@ -1,6 +1,6 @@
 // Moirano Julia
 // tp4 comisión 1
-// Link del video: https://www.youtube.com/watch?v=g0Nfa6YUZps
+// Link del video: https://www.youtube.com/watch?v=MeiygKXMH5g
 
 let jugador1x, jugador1y;
 let jugador2x, jugador2y;
