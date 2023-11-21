@@ -5,7 +5,7 @@
  */
  let aventura;
 function setup() {
-  createCanvas(400, 600);
+  createCanvas(600, 600);
   aventura = new Aventura();
 }
 
