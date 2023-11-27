@@ -16,7 +16,3 @@ function draw() {
 function keyPressed() {
   aventura.presionar(keyCode);
 }
-
-function mousePressed(){
-  aventura.clickear(mouseButton);
-}
