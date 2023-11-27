@@ -14,5 +14,5 @@ function draw() {
 }
 
 function keyPressed() {
-  aventura.presionar(keyCode);
+  aventura.usarTecla(keyCode);
 }
