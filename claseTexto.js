@@ -16,7 +16,7 @@ dibujarBloque(blox,bloy,historia){
   fill(125,125,190);
   textAlign(CENTER, CENTER);
   textSize(17);
-  text(historia,this.blox,this.bloy,this.bloqueanchura,this.bloquealtura);
+  text(historia,this.blox+10,this.bloy,this.bloqueanchura-20,this.bloquealtura);
   pop();
 }
 }
