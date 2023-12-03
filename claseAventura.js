@@ -2,7 +2,7 @@
 class Aventura {
   constructor() {
     this.pantallaActual= 0;
-    this.totaldeimagenes= 25;
+    this.totaldeimagenes= 26;
     this.imagenes= new Array(this.totaldeimagenes);
     for (let i= 0; i < this.totaldeimagenes; i++) {
       this.imagenes[i]= loadImage("data/imagen"+i+".jpg");
@@ -161,7 +161,8 @@ class Aventura {
         this.boton3.dibujar(400, 460, this.anchoboton+75, this.altoboton, this.nombredeboton[3], 25, 0);
         break;
       case 26: /// PANTALLA DE CRÉDITOS
-        this.boton4.dibujar(600, 500, this.anchoboton, this.altoboton, this.nombredeboton[4], 26, 0);
+        image(this.imagenes[25], 0, 0, width, height);
+        this.boton4.dibujar(725, 550, this.anchoboton, this.altoboton, this.nombredeboton[4], 26, 0);
         break;
         default:
     }
