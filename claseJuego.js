@@ -104,7 +104,7 @@ class Juego{
                             this.aventura.dibujar();
                            // background(125,30,125);
                           } else if(this.estado===10){
-                              image(this.imagenes[19],0,0);
+                              image(this.imagenes[16],0,0);
                               this.boton3.dibujar(650,550,250,50,"VOLVER AL INICIO",10,0);
                           }
                            if (mouseIsPressed) {
