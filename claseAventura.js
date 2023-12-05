@@ -16,14 +16,10 @@ class Aventura {
     this.bloquedetexto1 = new bloquedetexto(500, 150, 5);
     this.anchoboton = 100;
     this.altoboton = 50;
-    this.tipografia = loadFont("data/papyrus.vlw");
     this.minijuego = new Juego();
   }
 
   dibujar() {
-    if (mouseIsPressed === true) {
-      this.clickear();
-    }
     switch (this.pantallaActual) {
     case 0:
       image(this.imagenes[0], 0, 0, width, height);
@@ -186,6 +182,7 @@ class Aventura {
     } else if (this.pantallaActual === this.boton4.pulpresente && this.boton4.apretar()) {
       this.pantallaActual = this.boton4.pulsiguiente;
     }
+   this.minijuego.clickear();
   }
 
   usarTecla(keyCode) {
