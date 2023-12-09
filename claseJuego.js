@@ -163,7 +163,7 @@ class Juego {
 
   presionar(keyCode) {
     if (this.estado === 1 || this.estado === 3 || this.estado === 5 || this.estado === 7) {
-      if (keyCode === LEFT_ARROW) {
+      if (keyCode === LEFT_ARROW && this.johnny1.perx>0) {
         this.johnny1.moverIzquierda1();
       } else if (keyCode === RIGHT_ARROW) {
         this.johnny1.moverDerecha1();
@@ -175,7 +175,7 @@ class Juego {
     } else if (this.estado === 2 || this.estado === 4 || this.estado === 6 || this.estado === 8) {
       if (keyCode === LEFT_ARROW) {
         this.johnny2.moverIzquierda2();
-      } else if (keyCode === RIGHT_ARROW) {
+      } else if (keyCode === RIGHT_ARROW && this.johnny2.perx<width) {
         this.johnny2.moverDerecha2();
       }
       if (this.johnny2.perx < -50) {
