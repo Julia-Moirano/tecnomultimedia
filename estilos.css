@@ -9,15 +9,44 @@
 
 body {
   /* background-image: linear-gradient(to right, #141e30, #243b55); */
-  background-image: url("images/background.png");
+  background-image: url("images/background.jpg");
   background-repeat: repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
+.card-img-top {
+  width: 18rem;
+  margin: auto;
+  margin-top: 2rem;
+}
+/*
+#footer-img {
+  width: 100%;
+  position: relative;
+  bottom: 100px;
+  margin-left: -300px;
+  overflow:hidden;
+}
+
+#bkg-img {
+  position: absolute;
+  display: block;
+  float: left;
+  z-index: -1;
+  
+}
+
+#header-img {
+  width: 100%;
+  position: relative;
+  top: -20px;
+  margin-left: -300px;
+  overflow: hidden;
+}
+*/
 .container {
   max-width: 800px;
-  margin: 0 auto;
 }
 
 .canvas {
@@ -65,6 +94,11 @@ span {
   cursor: pointer;
 }
 
+.card {
+  font-weight: bold;
+  color: rgb(90, 60, 90);
+}
+
 .btn-primary {
   background-color: rgb(125, 125, 175);
   border-color: rgb(90, 60, 90);
@@ -77,6 +111,26 @@ span {
 .open>.dropdown-toggle.btn-primary {
   background-color: rgb(90, 60, 90);
   border-color: rgb(125, 125, 175);
+}
+
+
+.btn-confettis:active {
+  margin-top: 0px;
+  box-shadow: 0 0px 0 rgb(160,160,160);
+}
+.slot {
+  position: relative;
+  perspective: 500px;
+}
+.slot div {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
 }
 
 /* Estilo para la barra de navegación */
@@ -138,6 +192,7 @@ footer {
   border-bottom: 1px solid rgba(255, 255, 255, .75);
   border-top-left-radius: .3rem;
   border-top-right-radius: .3rem;
+  background-image: url("images/pattern.png");
 }
 
 /* Estilo para el título del modal */
@@ -156,6 +211,12 @@ footer {
   display: flex !important;
   justify-content: space-around;
   flex-basis: auto;
+}
+
+.icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
 }
 
 .navbar-nav {
@@ -219,10 +280,27 @@ footer {
   .p5Canvas {
     width: 500px !important;
     height: 400px !important;
+  }
+
+  .modal {
+    padding-right: 2.5rem !important;
+  }
 }
 
-.modal {
-  padding-right: 5rem !important;
+@media only screen and (min-width: 500px) and (max-width: 550px) {
+  .modal {
+    padding-left: 2rem !important;
+  }
+
+  .p5Canvas {
+    width: 400px !important;
+    height: 300px !important;
+  }
+}
+
+@media only screen and (max-width: 695px) {
+.card {
+  margin-bottom: 1rem;
 }
 }
 
@@ -243,10 +321,18 @@ footer {
     flex-wrap: wrap;
   }
 
-  .p5Canvas {
-    width: 400px !important;
-    height: 300px !important;
+  .card-img-top {
+    width: 15rem;
+  }
+
+  .modal-title {
+    font-size: 20px;
 }
+
+  .p5Canvas {
+    width: 300px !important;
+    height: 200px !important;
+  }
 
   #margin-bottom75 {
     margin-bottom: .75rem;
