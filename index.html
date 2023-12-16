@@ -2,246 +2,207 @@
 <html lang="es">
 
 <head>
-    <!-- Meta tags requeridas -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bitácora - La Sirena</title>
+  <!-- Meta tags requeridas -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Biografías - La Sirena</title>
 
-    <link rel="icon" href="images/favicon-32x32.png" type="image/x-icon">
+  <link rel="icon" href="images/favicon-32x32.png" type="image/x-icon">
 
-    <!-- librería de p5.js desde un CDN -->
-    <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <!-- librería de p5.js desde un CDN -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- archivo CSS personalizado -->
-    <link rel="stylesheet" href="estilos.css">
+  <!-- archivo CSS personalizado -->
+  <link rel="stylesheet" href="estilos.css">
 
-    <!-- tipografía Papyrus de Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Papyrus&display=swap" rel="stylesheet">
+  <!-- tipografía Papyrus de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Papyrus&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-    <!-- Crear un contenedor para el contenido del sitio web -->
-    <div class="container">
-        <!-- Crear un encabezado con el título del sitio web y una barra de navegación con botones -->
-        <header class="py-3">
-            <div id="header-img">
-                <img id="bkg-img" src="images/header.png" />
+  <!-- Crear un contenedor para el contenido del sitio web -->
+  <div class="container">
+    <!-- Crear un encabezado con el título del sitio web y una barra de navegación con botones -->
+    <header class="py-3">
+      <div id="header-img">
+        <img id="bkg-img" src="images/header.png" />
+      </div>
+      <div id="margin-top1">
+        <h1>La Sirena</h1>
+        <h2>de Ray Bradbury</h2>
+        <p id=subtitle>Una aventura gráfica realizada por <br> Julia Moirano y Joaquín Galasso.</p>
+      </div>
+
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="pos-f-t">
+          <div class="collapse" id="navbarToggleExternalContent">
+            <div class="p-4" id="oculto">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item" id="margin-bottom75" id="margin-right1">
+                  <a class="nav-link" href="index.html">Volver al inicio</a>
+                </li>
+                <li class="nav-item" id="margin-bottom1" id="margin-right1">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Jugar ahora
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="nuestro-proceso.html">Nuestro proceso</a>
+                </li>
+              </ul>
             </div>
-            <div id="margin-top1">
-                <h1>La Sirena</h1>
-                <h2>de Ray Bradbury</h2>
-                <p id=subtitle>Una aventura gráfica realizada por <br> Julia Moirano y Joaquín Galasso.</p>
-            </div>
-
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="pos-f-t">
-                    <div class="collapse" id="navbarToggleExternalContent">
-                        <div class="p-4" id="oculto">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item" id="margin-bottom75" id="margin-right1">
-                                    <a class="nav-link" href="sobre-nosotros.html">Sobre nosotros</a>
-                                </li>
-                                <li class="nav-item" id="margin-bottom1" id="margin-right1">
-                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                        data-target="#exampleModalCenter">
-                                        Jugar ahora
-                                    </button>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index.html">Volver al inicio</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <nav class="navbar navbar-dark bg-dark" id="oculto">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </nav>
-                </div>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="sobre-nosotros.html">Sobre nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
-                                data-target="#exampleModalCenter">
-                                Jugar ahora
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Volver al inicio</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-
-        <!-- Crear una sección principal con información sobre el juego -->
-        <main class="py-3">
-            <div class="column inline">
-                <h2>¿Cómo lo creamos?</h2>
-                <p>Para realizar este proyecto, seguimos una serie de pasos que nos ayudaron a organizar nuestro trabajo
-                    y a cumplir con los objetivos propuestos. <br> <br> En primer lugar, <b>hicimos un diagrama de flujo
-                        en
-                        Figjam</b>,
-                    una herramienta online que permite crear esquemas visuales de forma colaborativa. En el diagrama,
-                    <b>plasmamos las diferentes escenas del juego, las opciones que tendría el jugador y las
-                        consecuencias
-                        de sus elecciones</b>. Así, definimos la estructura y la lógica del juego, y nos aseguramos de
-                    que fuera
-                    coherente con el relato original.
-                </p>
-
-                <!-- Gallery 1 -->
-                <div class="row">
-                    <iframe style="border: 1px solid rgba(99, 58, 97, 0.1);" width="725" height="400"
-                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F1ek0c3BbDX2udJs0MxZ36E%2Ftpfinal_diagrama%3Ftype%3Dwhiteboard%26node-id%3D0%253A1%26t%3DTliPSKayGhjNV3KI-1"
-                        allowfullscreen></iframe>
-                </div>
-                <!-- Gallery 1 -->
-
-                <p id="margin-top1">En segundo lugar, trabajamos en el arte del juego, es decir, las ilustraciones que
-                    acompañarían a la narrativa. Para ello, <b>Julia se basó en los sketches que habíamos hecho
-                        previamente</b>, donde había elegido una estética lúgubre, que tiende al gris oscuro, pero con
-                    acentos violáceos y amarillentos. Estos colores nos parecieron adecuados para <b>representar el
-                        ambiente sombrío y misterioso del relato</b>, así como los contrastes entre la realidad y la
-                    fantasía.
-                    <b>Se utilizó CLIP Studio para dibujar las imágenes y la tipografía Papyrus para narrarlas</b>.
-                </p>
-
-                <!-- Gallery 2 -->
-                <div class="row">
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <img src="images/sketches/horizontales/imagen (7).jpg"
-                            class="w-100 shadow-1-strong rounded mb-4" alt="Imagen 1" />
-
-                        <img src="images/sketches/horizontales/imagen (2).jpg"
-                            class="w-100 shadow-1-strong rounded mb-4" alt="Imagen 2" />
-                    </div>
-
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <img src="images/sketches/horizontales/imagen (10).jpg"
-                            class="w-100 shadow-1-strong rounded mb-4" alt="Imagen 3" />
-
-                        <img src="images/sketches/horizontales/imagen (4).jpg"
-                            class="w-100 shadow-1-strong rounded mb-4" alt="Imagen 4" />
-                    </div>
-
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <img src="images/sketches/horizontales/imagen (5).jpg"
-                            class="w-100 shadow-1-strong rounded mb-4" alt="Imagen 5" />
-
-                        <img src="images/sketches/horizontales/imagen (6).jpg"
-                            class="w-100 shadow-1-strong rounded mb-4" alt="Imagen 6" />
-                    </div>
-                </div>
-                <!-- Gallery 2-->
-
-                <p id="margin-top1">En tercer lugar, <b>nos dedicamos a la programación del juego, utilizando JavaScript
-                        y la librería de P5.js</b>. Esta librería nos permitió crear gráficos interactivos de forma
-                    sencilla y eficiente, aprovechando las ventajas del lenguaje web. Juntos, escribimos el código,
-                    siguiendo el diagrama de flujo que habíamos hecho y usando las imágenes que Julia había creado. Así,
-                    <b>logramos integrar los elementos visuales y narrativos del juego, y darle la funcionalidad que
-                        queríamos</b>.
-                </p>
-
-                <!-- Gallery 3-->
-                <div class="row">
-                    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                        <img src="images/sketches/verticales/vertical (1).jpg"
-                            class="w-100 shadow-1-strong rounded mb-4" alt="Imagen 1" />
-                    </div>
-
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <img src="images/sketches/verticales/vertical (2).jpg"
-                            class="w-100 shadow-1-strong rounded mb-4" alt="Imagen 4" />
-                    </div>
-
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <img src="images/sketches/verticales/vertical (3).jpg"
-                            class="w-100 shadow-1-strong rounded mb-4" alt="Imagen 6" />
-                    </div>
-                </div>
-                <!-- Gallery 3 -->
-                <p id="margin-top1">Por último, <b>creamos la página web que alojaría el juego, usando HTML, CSS,
-                        JavaScript y el framework Bootstrap</b>. Con HTML y CSS, diseñamos la estructura y el estilo de
-                    la
-                    página, siguiendo los principios de diseño web responsivo. Con JavaScript y Bootstrap, agregamos la
-                    interactividad y la dinámica de la página, usando elementos como botones, modales y galerías. Así,
-                    <b>conseguimos que la página fuera atractiva, accesible y fácil de navegar</b>.
-                </p>
-                <script src="https://gist.github.com/joaquingalasso/aa5092a2deb143bc88c696111f4b59a7.js"></script>
-                <div class="slot"></div>
-                <button type="button" class="btn btn-primary btn-confettis" onclick="ejecutarCodigo()">
-                    Ejecutar código
-                </button>
-            </div>
-        </main>
-        <!-- Crear un pie de página con información de contacto -->
-        <footer class="py-3 bg-dark text-white">
-            <span class="text-center">Esta página web fue creada por Julia y Joaco para el TP Final de Tecno 1.</span>
-            <br>
-            <span class="text-center"><b>
-                    < Facultad de Artes, UNLP>
-                </b></span>
-            <div id="footer-img">
-                <img id="bkg-img" src="images/footer.png" />
-            </div>
-        </footer>
-    </div>
-
-    <!-- Crear un modal para mostrar el juego de p5.js -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCentered"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Aventura gráfica: "La Sirena"</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body canvas">
-                    <div id='juego'></div>
-                    <script language="javascript" type="text/javascript" src="game/libraries/p5.min.js" defer></script>
-                    <script language="javascript" type="text/javascript" src="game/claseAventura.js" defer></script>
-                    <script language="javascript" type="text/javascript" src="game/claseBoton.js" defer></script>
-                    <script language="javascript" type="text/javascript" src="game/claseJuego.js" defer></script>
-                    <script language="javascript" type="text/javascript" src="game/clasePersonaje.js" defer></script>
-                    <script language="javascript" type="text/javascript" src="game/clasePiedras.js" defer></script>
-                    <script language="javascript" type="text/javascript" src="game/claseTexto.js" defer></script>
-                    <script language="javascript" type="text/javascript" src="game/tpfinal.js" defer></script>
-                </div>
-
-            </div>
+          </div>
+          <nav class="navbar navbar-dark bg-dark" id="oculto">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </nav>
         </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Volver al inicio</a>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                Jugar ahora
+              </button>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="nuestro-proceso.html">Nuestro proceso</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Crear una sección principal con información sobre el juego -->
+    <main class="py-3">
+      <div class="column inline">
+        <h2>¿Quiénes somos?</h2>
+        <p>Somos Julia y Joaco, dos <b>estudiantes universitarios del primer año de la carrera de Diseño Multimedial de
+            la
+            Facultad de Artes (UNLP)</b>. Nos apasiona la narrativa interactiva y la expresión artística a través de los
+          medios digitales. En este proyecto, quisimos crear una Aventura gráfica que adapta el relato “La Sirena”, de
+          Ray Bradbury, uno de nuestros autores favoritos de ciencia ficción.</p>
+        <div class="row">
+          <!-- Esta es la columna que ajusta el tamaño de la primera tarjeta -->
+          <div class="col">
+            <!-- Esta es la primera tarjeta -->
+            <div class="card">
+              <!-- Esta es la foto de la primera tarjeta -->
+              <img src="images/foto_juli.jpg" class="card-img-top" alt="Foto de Julia">
+              <!-- Este es el contenido de la primera tarjeta -->
+              <div class="card-body">
+                <!-- Este es el título de la primera tarjeta -->
+                <h5 class="card-title">Julia Moirano</h5>
+                <!-- Este es el texto de la primera tarjeta -->
+                <p class="card-text">
+                  <b>N° de legajo:</b> 94719/0 <br>
+                  <b>Edad:</b> 19 años <br>
+                  <b>Hobbies:</b> dibujar, crear, animar. <br><br>
+                  Ha desarrollado un estilo propio que combina elementos fantásticos y realistas. Le gusta experimentar
+                  con diferentes
+                  técnicas y herramientas, y en este caso utilizó CLIP Studio.
+                </p>
+                <!-- Este es el ícono de la red social de la primera tarjeta -->
+                <a href="https://github.com/julia-moirano" class="card-link icon">
+                  <img src="icons/github.svg" alt="GitHub" width="35" height="35" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Esta es la columna que ajusta el tamaño de la segunda tarjeta -->
+          <div class="col">
+            <!-- Esta es la segunda tarjeta -->
+            <div class="card">
+              <!-- Esta es la foto de la segunda tarjeta -->
+              <img src="images/foto_joa.jpg" class="card-img-top" alt="Foto de Joaquín">
+              <!-- Este es el contenido de la segunda tarjeta -->
+              <div class="card-body">
+                <!-- Este es el título de la segunda tarjeta -->
+                <h5 class="card-title">Joaquín Galasso</h5>
+                <!-- Este es el texto de la segunda tarjeta -->
+                <p class="card-text">
+                  <b>N° de legajo:</b> 94698/3 <br>
+                  <b>Edad:</b> 20 años <br>
+                  <b>Hobbies:</b> programar, cocinar, tkdo. <br><br>
+                  Tiene una formación previa en Informática, lo que le facilitó
+                  el aprendizaje de JavaScript y la librería de P5.js. Le apasiona todo lo que refiere a la ciencia y la
+                  tecnología.
+                </p>
+                <!-- Este es el ícono de la red social de la segunda tarjeta -->
+                <a href="https://linktree.com/joaquingalasso" class="card-link icon">
+                  <img src="icons/linktree.svg" alt="LinkTree" width="35" height="35" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Crear un pie de página con información de contacto -->
+    <footer class="py-3 bg-dark text-white">
+      <span class="text-center">Esta página web fue creada por Julia y Joaco para el TP Final de Tecno 1.</span>
+      <br>
+      <span class="text-center"><b>
+          < Facultad de Artes, UNLP>
+        </b></span>
+      <div id="footer-img">
+        <img id="bkg-img" src="images/footer.png" />
+      </div>
+    </footer>
+  </div>
+
+  <!-- Crear un modal para mostrar el juego de p5.js -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCentered"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Aventura gráfica: "La Sirena"</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body canvas">
+          <div id='juego'></div>
+          <script language="javascript" type="text/javascript" src="game/libraries/p5.min.js" defer></script>
+          <script language="javascript" type="text/javascript" src="game/claseAventura.js" defer></script>
+          <script language="javascript" type="text/javascript" src="game/claseBoton.js" defer></script>
+          <script language="javascript" type="text/javascript" src="game/claseJuego.js" defer></script>
+          <script language="javascript" type="text/javascript" src="game/clasePersonaje.js" defer></script>
+          <script language="javascript" type="text/javascript" src="game/clasePiedras.js" defer></script>
+          <script language="javascript" type="text/javascript" src="game/claseTexto.js" defer></script>
+          <script language="javascript" type="text/javascript" src="game/tpfinal.js" defer></script>
+        </div>
+
+      </div>
     </div>
+  </div>
 
-    <!-- JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" defer></script>
-    <script src="main.js" defer></script>
+  <!-- JavaScript -->
 
-    <!-- jQuery primero, luego Popper.js, luego Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+  <!-- jQuery primero, luego Popper.js, luego Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
