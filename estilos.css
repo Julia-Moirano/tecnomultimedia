@@ -20,13 +20,15 @@ body {
   margin: auto;
   margin-top: 2rem;
 }
-/*
+
 #footer-img {
-  width: 100%;
-  position: relative;
-  bottom: 100px;
-  margin-left: -300px;
-  overflow:hidden;
+  background-image: url("images/footer.png");
+  background-repeat: no-repeat;
+  position: fixed;
+  bottom: 150px;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: -1;
 }
 
 #bkg-img {
@@ -34,17 +36,19 @@ body {
   display: block;
   float: left;
   z-index: -1;
-  
+
 }
 
 #header-img {
-  width: 100%;
-  position: relative;
-  top: -20px;
-  margin-left: -300px;
-  overflow: hidden;
+  background-image: url("images/header.png");
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
-*/
+
 .container {
   max-width: 800px;
 }
@@ -116,12 +120,14 @@ span {
 
 .btn-confettis:active {
   margin-top: 0px;
-  box-shadow: 0 0px 0 rgb(160,160,160);
+  box-shadow: 0 0px 0 rgb(160, 160, 160);
 }
+
 .slot {
   position: relative;
   perspective: 500px;
 }
+
 .slot div {
   width: 35px;
   height: 35px;
@@ -288,9 +294,6 @@ footer {
 }
 
 @media only screen and (min-width: 500px) and (max-width: 550px) {
-  .modal {
-    padding-left: 2rem !important;
-  }
 
   .p5Canvas {
     width: 400px !important;
@@ -299,12 +302,31 @@ footer {
 }
 
 @media only screen and (max-width: 695px) {
-.card {
-  margin-bottom: 1rem;
+  .card {
+    margin-bottom: 1rem;
+  }
 }
+
+@media only screen and (max-width: 576px) {
+  .modal-dialog-centered {
+    min-height: calc(100% - (1.75rem * 2));
+    justify-content: center;
+  }
+
+  .modal-dialog {
+    max-width: 500px;
+    margin: 1.75rem auto;
+  }
+  .modal {
+    padding-right: 0rem !important;
+  }
 }
 
 @media only screen and (max-width: 500px) {
+  .modal {
+    padding-right: 0 !important;
+  }
+
   .navbar-nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -327,12 +349,16 @@ footer {
 
   .modal-title {
     font-size: 20px;
-}
+  }
 
   .p5Canvas {
-    width: 300px !important;
-    height: 200px !important;
+    width: 350px !important;
+    height: 250px !important;
   }
+
+  .modal-body {
+    padding: 0.75rem;
+}
 
   #margin-bottom75 {
     margin-bottom: .75rem;
