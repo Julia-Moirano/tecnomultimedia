@@ -5,7 +5,7 @@
   <!-- Meta tags requeridas -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Biografías - La Sirena</title>
+  <title>Inicio - La Sirena</title>
 
   <link rel="icon" href="images/favicon-32x32.png" type="image/x-icon">
 
@@ -22,8 +22,13 @@
   <!-- tipografía Papyrus de Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Papyrus&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Papyrus&display=swap">
+  <style>
+    /* Aplicar Papyrus a todo el documento */
+    * {
+      font-family: 'Papyrus', fantasy;
+    }
+  </style>
 </head>
 
 <body>
@@ -40,14 +45,13 @@
         <p id=subtitle>Una aventura gráfica realizada por <br> Julia Moirano y Joaquín Galasso.</p>
       </div>
 
-
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="pos-f-t">
           <div class="collapse" id="navbarToggleExternalContent">
             <div class="p-4" id="oculto">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item" id="margin-bottom75" id="margin-right1">
-                  <a class="nav-link" href="index.html">Volver al inicio</a>
+                  <a class="nav-link" href="sobre-nosotros.html">Sobre nosotros</a>
                 </li>
                 <li class="nav-item" id="margin-bottom1" id="margin-right1">
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -71,7 +75,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Volver al inicio</a>
+              <a class="nav-link" href="sobre-nosotros.html">Sobre nosotros</a>
             </li>
             <li class="nav-item">
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -89,66 +93,20 @@
     <!-- Crear una sección principal con información sobre el juego -->
     <main class="py-3">
       <div class="column inline">
-        <h2>¿Quiénes somos?</h2>
-        <p>Somos Julia y Joaco, dos <b>estudiantes universitarios del primer año de la carrera de Diseño Multimedial de
-            la
-            Facultad de Artes (UNLP)</b>. Nos apasiona la narrativa interactiva y la expresión artística a través de los
-          medios digitales. En este proyecto, quisimos crear una Aventura gráfica que adapta el relato “La Sirena”, de
-          Ray Bradbury, uno de nuestros autores favoritos de ciencia ficción.</p>
-        <div class="row">
-          <!-- Esta es la columna que ajusta el tamaño de la primera tarjeta -->
-          <div class="col">
-            <!-- Esta es la primera tarjeta -->
-            <div class="card">
-              <!-- Esta es la foto de la primera tarjeta -->
-              <img src="images/foto_juli.jpg" class="card-img-top" alt="Foto de Julia">
-              <!-- Este es el contenido de la primera tarjeta -->
-              <div class="card-body">
-                <!-- Este es el título de la primera tarjeta -->
-                <h5 class="card-title">Julia Moirano</h5>
-                <!-- Este es el texto de la primera tarjeta -->
-                <p class="card-text">
-                  <b>N° de legajo:</b> 94719/0 <br>
-                  <b>Edad:</b> 19 años <br>
-                  <b>Hobbies:</b> dibujar, crear, animar. <br><br>
-                  Ha desarrollado un estilo propio que combina elementos fantásticos y realistas. Le gusta experimentar
-                  con diferentes
-                  técnicas y herramientas, y en este caso utilizó CLIP Studio.
-                </p>
-                <!-- Este es el ícono de la red social de la primera tarjeta -->
-                <a href="https://github.com/julia-moirano" class="card-link icon">
-                  <img src="icons/github.svg" alt="GitHub" width="35" height="35" />
-                </a>
-              </div>
-            </div>
-          </div>
-          <!-- Esta es la columna que ajusta el tamaño de la segunda tarjeta -->
-          <div class="col">
-            <!-- Esta es la segunda tarjeta -->
-            <div class="card">
-              <!-- Esta es la foto de la segunda tarjeta -->
-              <img src="images/foto_joa.jpg" class="card-img-top" alt="Foto de Joaquín">
-              <!-- Este es el contenido de la segunda tarjeta -->
-              <div class="card-body">
-                <!-- Este es el título de la segunda tarjeta -->
-                <h5 class="card-title">Joaquín Galasso</h5>
-                <!-- Este es el texto de la segunda tarjeta -->
-                <p class="card-text">
-                  <b>N° de legajo:</b> 94698/3 <br>
-                  <b>Edad:</b> 20 años <br>
-                  <b>Hobbies:</b> programar, cocinar, tkdo. <br><br>
-                  Tiene una formación previa en Informática, lo que le facilitó
-                  el aprendizaje de JavaScript y la librería de P5.js. Le apasiona todo lo que refiere a la ciencia y la
-                  tecnología.
-                </p>
-                <!-- Este es el ícono de la red social de la segunda tarjeta -->
-                <a href="https://linktree.com/joaquingalasso" class="card-link icon">
-                  <img src="icons/linktree.svg" alt="LinkTree" width="35" height="35" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img src="images/title.png" alt="La Sirena" class="img-fluid">
+        <h2>¿De qué se trata el juego?</h2>
+        <p>El juego está basado en el relato "La Sirena" de Ray Bradbury, publicado en 1951. <br> Es una historia sobre
+          la
+          soledad y el paso del tiempo, <b>donde una extraña criatura acude a un faro luego de oír su sirena</b>. El
+          juego te
+          invita a explorar el mundo de aquella bestia, interactuando con ella y con el farero, mientras descubrís los
+          secretos y las emociones que se esconden tras este encuentro.</p>
+        <p>El juego está <b>hecho con p5.js, una biblioteca de JavaScript para la codificación creativa</b>. La misma
+          tiene múltiples
+          finales posibles, dependiendo de las elecciones que hagas a medida que avanzás.</p>
+        <!--  <img src="images/monster.png" alt="La criatura" class="img-fluid" style="max-height: 150px; max-width: 150px"> -->
+        <p id="thick" type="button" data-toggle="modal" data-target="#exampleModalCenter">¿Te animás a jugar? Hacé clic
+          acá y sumergite en el mundo de "La Sirena".</p>
       </div>
     </main>
     <!-- Crear un pie de página con información de contacto -->
@@ -186,7 +144,6 @@
           <script language="javascript" type="text/javascript" src="game/claseTexto.js" defer></script>
           <script language="javascript" type="text/javascript" src="game/tpfinal.js" defer></script>
         </div>
-
       </div>
     </div>
   </div>
